@@ -120,7 +120,7 @@ nav a:hover {
     transform: translateY(-50%); 
     height: 90vh; 
     width: auto;
-    z-index: 0; /* Теперь они на нулевом слое (над фоном, но под текстом) */
+    z-index: 10; /* Теперь они на нулевом слое (над фоном, но под текстом) */
     pointer-events: none; 
     opacity: 0.4; /* Сделали чуть прозрачнее, чтобы точно не мешали читать */
     filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.9));
