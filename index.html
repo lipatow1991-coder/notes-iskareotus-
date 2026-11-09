@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTES ISKAREOTUS | Official Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ЭКРАН ПРИВЕТСТВИЯ (ПРЕЛОАДЕР) -->
+    <div id="intro-screen" onclick="startExperience()">
+        <img src="images/logo.jpg" alt="Logo" class="intro-logo">
+        <h2 class="intro-text">Нажмите, чтобы войти в мир тьмы</h2>
+    </div>
+
+    <!-- Звук клика -->
+    <audio id="clickSound" src="sounds/click.mp3" preload="auto"></audio>
+    
+    <!-- Фоновая музыка -->
+    <audio id="bgMusic" src="sounds/ambient.mp3" loop></audio>
+
+    <!-- Меню навигации -->
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#about">Описание</a>
+        <a href="#music">Музыка</a>
+        <a href="#" class="nav-chat">Чат</a>
+        <a href="#" class="nav-register">Регистрация</a>
+        
+        <!-- Кнопка фоновой музыки -->
+        <button id="musicBtn" class="music-btn">🔇 Выключить фон</button>
+    </nav>
+
+    <!-- СЕКЦИЯ 1: ГЛАВНАЯ -->
+    <section id="home" class="hero-section">
+        <div class="hero-content fade-in">
+            <h2 class="hero-subtitle">МУЗЫКАЛЬНАЯ ГРУППА</h2>
+            <h1 class="hero-title">NOTES ISKAREOTUS</h1>
+            <div class="logo-container">
+                <img src="images/logo.jpg" alt="NOTES ISKAREOTUS Logo" class="main-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ 2: ОПИСАНИЕ -->
+    <section id="about" class="content-section bg-runes">
+        <h2 class="section-title fade-in">О ПРОЕКТЕ</h2>
+        <div class="about-container fade-in">
+            <div class="about-image">
+                <img src="images/about_photo.jpg" alt="Notes Iskareotus Musician">
+            </div>
+            <div class="description-box">
+                <p><strong>NOTES ISKAREOTUS</strong> — это твоя темная сторона души.</p>
+                <p>Это симфонический готик-метал, пропитанный мрачным средневековьем и темным фэнтези. Это история о падших ангелах и восставших демонах, о забытых культах и мрачных писаниях, написанных кровью.</p>
+                <p>Здесь нет места свету. Только тяжелые риффы, оперный вокал, готические хоры и древние существа, что скрываются в тенях. Каждый трек — это ритуал. Каждый альбом — это страница из запретной книги.</p>
+                <p class="highlight-text">Слушай. Пока твоя тьма не поглотила тебя.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ 3: ДИСКОГРАФИЯ -->
+    <section id="music" class="content-section bg-dungeon">
+        <h2 class="section-title fade-in">ДИСКОГРАФИЯ</h2>
+        
+        <div class="album-grid">
+            
+            <!-- Альбом 1 -->
+            <div class="album-card fade-in" onclick="openAlbum('Мир Красной Луны', 'music/album1', [
+                { file: '01.mp3', title: 'Бал Маскарад' }, { file: '02.mp3', title: 'Первородная Кровь' },
+                { file: '03.mp3', title: 'Шпили с Горгульями' }, { file: '04.mp3', title: 'Моя Душа' },
+                { file: '05.mp3', title: 'Лес Теней' }, { file: '06.mp3', title: 'Темный Дворецкий' },
+                { file: '07.mp3', title: 'Поля Красных Цветов' }, { file: '08.mp3', title: 'Станцуй Последний Раз' },
+                { file: '09.mp3', title: 'Слезы Темных Волн' }, { file: '10.mp3', title: 'Любовь в Объятьях Ночи' }
+            ])">
+                <img src="images/album1.jpg" alt="Мир Красной Луны">
+                <h3>Мир Красной Луны</h3>
+                <div class="album-actions">
+                    <span class="music-platform-link">Слушать альбом</span>
+                    <a href="music/album1.zip" download class="download-link" onclick="event.stopPropagation()">⬇ Скачать</a>
+                </div>
+            </div>
+            
+            <!-- Альбом 2 -->
+            <div class="album-card fade-in" onclick="openAlbum('Пути Загробного Мира', 'music/album2', [
+                { file: '01.mp3', title: 'Некромантия' }, { file: '02.mp3', title: 'Некрополис из Тлена' },
+                { file: '03.mp3', title: 'Кладбище Драконов' }, { file: '04.mp3', title: 'Темницы Проклятых' },
+                { file: '05.mp3', title: 'Кровавая Принцесса' }, { file: '06.mp3', title: 'Курганы Вечных Песен' },
+                { file: '07.mp3', title: 'Лабиринты из Шелка' }, { file: '08.mp3', title: 'Симфония Лича' }
+            ])">
+                <img src="images/album2.jpg" alt="Пути Загробного Мира">
+                <h3>Пути Загробного Мира</h3>
+                <div class="album-actions">
+                    <span class="music-platform-link">Слушать альбом</span>
+                    <a href="music/album2.zip" download class="download-link" onclick="event.stopPropagation()">⬇ Скачать</a>
+                </div>
+            </div>
+            
+            <!-- Альбом 3 -->
+            <div class="album-card fade-in" onclick="openAlbum('Последний Завет Ада', 'music/album3', [
+                { file: '01.mp3', title: 'Падение Люцифера' }, { file: '02.mp3', title: 'Первый Грех' },
+                { file: '03.mp3', title: 'Первая Женщина' }, { file: '04.mp3', title: 'Ад Данте' },
+                { file: '05.mp3', title: 'Саломея' }, { file: '06.mp3', title: 'Тридцать Монет' }
+            ])">
+                <img src="images/album3.jpg" alt="Последний Завет Ада">
+                <h3>Последний Завет Ада</h3>
+                <div class="album-actions">
+                    <span class="music-platform-link">Слушать альбом</span>
+                    <a href="music/album3.zip" download class="download-link" onclick="event.stopPropagation()">⬇ Скачать</a>
+                </div>
+            </div>
+            
+            <!-- Альбом 4 -->
+            <div class="album-card fade-in" onclick="openAlbum('Грехи Небес', 'music/album4', [
+                { file: '01.mp3', title: 'Апокалипсис' }, { file: '02.mp3', title: 'Огонь Обжигающий Небеса' },
+                { file: '03.mp3', title: 'Престол Бездны' }, { file: '04.mp3', title: 'Падший Серафим' },
+                { file: '05.mp3', title: 'Дюны Боли' }, { file: '06.mp3', title: 'Огненная Река' },
+                { file: '07.mp3', title: 'Глубины Чревоугодия' }, { file: '08.mp3', title: 'Холмы Наслаждения' },
+                { file: '09.mp3', title: 'Я Есть Легион' }
+            ])">
+                <img src="images/album4.jpg" alt="Грехи Небес">
+                <h3>Грехи Небес</h3>
+                <div class="album-actions">
+                    <span class="music-platform-link">Слушать альбом</span>
+                    <a href="music/album4.zip" download class="download-link" onclick="event.stopPropagation()">⬇ Скачать</a>
+                </div>
+            </div>
+            
+            <!-- Альбом 5 -->
+            <div class="album-card fade-in" onclick="openAlbum('Земли Пролитанные Болью', 'music/album5', [
+                { file: '01.mp3', title: 'Чумной Доктор' }, { file: '02.mp3', title: 'Святой Инквизитор' },
+                { file: '03.mp3', title: 'Голубая Кровь' }, { file: '04.mp3', title: 'Бездушная Толпа' },
+                { file: '05.mp3', title: 'Голод' }, { file: '06.mp3', title: 'Война' },
+                { file: '07.mp3', title: 'Красная Графиня' }, { file: '08.mp3', title: 'Пепел Империи' }
+            ])">
+                <img src="images/album5.jpg" alt="Земли Пролитанные Болью">
+                <h3>Земли Пролитанные Болью</h3>
+                <div class="album-actions">
+                    <span class="music-platform-link">Слушать альбом</span>
+                    <a href="music/album5.zip" download class="download-link" onclick="event.stopPropagation()">⬇ Скачать</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer>
+        <p>© 2026 NOTES ISKAREOTUS.</p>
+    </footer>
+
+    <!-- ВСПЛЫВАЮЩЕЕ ОКНО ПЛЕЕРА -->
+    <div id="albumModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeAlbum()">&times;</span>
+            <h2 id="modalTitle">Название альбома</h2>
+            <div id="trackList" class="track-list"></div>
+            <audio id="modalPlayer" controls style="width: 100%; margin-top: 20px;"></audio>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
