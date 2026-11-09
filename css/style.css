@@ -470,3 +470,10 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Скрываем горгулий на телефонах и планшетах */
+@media (max-width: 1000px) {
+    .gargoyle {
+        display: none !important;
+    }
+}
