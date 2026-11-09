@@ -207,7 +207,14 @@ nav a:hover {
                 inset 0 -80px 80px -50px rgba(0,0,0,1);
 }
 
-.bg-runes { background-image: url('../images/bg_runes.jpg'); }
+/* ТУТ МЫ ВСТРАИВАЕМ ГОРГУЛИЙ ПРЯМО В ФОН РУН */
+.bg-runes { 
+    background-image: url('../images/gargoyle_left.png'), url('../images/gargoyle_right.png'), url('../images/bg_runes.jpg');
+    background-position: left center, right center, center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 25% auto, 25% auto, cover; 
+}
+
 .bg-dungeon { background-image: url('../images/bg_dungeon.jpg'); }
 
 .section-title {
@@ -220,32 +227,6 @@ nav a:hover {
     text-align: center;
     position: relative;
     z-index: 2;
-}
-
-/* --- ГОРГУЛЬИ В БЛОКЕ "О ПРОЕКТЕ" --- */
-.gargoyle {
-    position: absolute;
-    top: 50%; /* Центрируем по вертикали */
-    transform: translateY(-50%); 
-    width: 25%; /* Ширина 25% от экрана */
-    max-width: 300px; /* Чтобы не были слишком огромными на больших мониторах */
-    height: auto; /* Показываются целиком */
-    z-index: 1;
-    pointer-events: none;
-    opacity: 0.9;
-    filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.8)); 
-}
-
-.gargoyle-left {
-    left: 0; 
-}
-
-.gargoyle-right {
-    right: 0; 
-}
-
-@media (max-width: 1000px) {
-    .gargoyle { display: none; }
 }
 
 /* --- БЛОК О ПРОЕКТЕ --- */
@@ -469,11 +450,4 @@ footer {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Скрываем горгулий на телефонах и планшетах */
-@media (max-width: 1000px) {
-    .gargoyle {
-        display: none !important;
-    }
 }
