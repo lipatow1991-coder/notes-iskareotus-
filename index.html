@@ -12,7 +12,8 @@
     <!-- ЭКРАН ПРИВЕТСТВИЯ (ПРЕЛОАДЕР) -->
     <div id="intro-screen" onclick="startExperience()">
         <img src="images/logo.jpg" alt="Logo" class="intro-logo">
-        <h2 class="intro-text">НАЖМИТЕ, ЧТОБЫ ВОЙТИ В МИР ГОТИЧЕСКОГО МЕТАЛА</h2>
+        <!-- НОВЫЙ ТЕКСТ -->
+        <h2 class="intro-text">Нажмите, чтобы войти в мир готического металла</h2>
     </div>
 
     <!-- Звук клика -->
@@ -47,8 +48,13 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 2: ОПИСАНИЕ -->
+    <!-- СЕКЦИЯ 2: ОПИСАНИЕ (С ГОРГУЛЬЯМИ) -->
     <section id="about" class="content-section bg-runes">
+        
+        <!-- Горгульи по бокам -->
+        <img src="images/gargoyle_left.png" alt="Gargoyle Left" class="gargoyle gargoyle-left">
+        <img src="images/gargoyle_right.png" alt="Gargoyle Right" class="gargoyle gargoyle-right">
+
         <h2 class="section-title fade-in">О ПРОЕКТЕ</h2>
         <div class="about-container fade-in">
             <div class="about-image">
@@ -80,7 +86,6 @@
                 <img src="images/album1.jpg" alt="Мир Красной Луны">
                 <h3>Мир Красной Луны</h3>
                 <div class="album-actions">
-                    <!-- Кнопка для открытия плеера на сайте -->
                     <span class="music-platform-link" style="cursor: pointer; color: #ff0000;" onclick="openAlbum('Мир Красной Луны', 'music/album1', [
                         { file: '01.mp3', title: 'Бал Маскарад' }, { file: '02.mp3', title: 'Первородная Кровь' },
                         { file: '03.mp3', title: 'Шпили с Горгульями' }, { file: '04.mp3', title: 'Моя Душа' },
@@ -89,7 +94,6 @@
                         { file: '09.mp3', title: 'Слезы Темных Волн' }, { file: '10.mp3', title: 'Любовь в Объятьях Ночи' }
                     ])">▶ Слушать альбом</span>
                     
-                    <!-- Кнопка для перехода на Яндекс -->
                     <a href="https://music.yandex.ru/artist/26548838?family=1&ref_id=b00770ee-cb99-4805-b20c-89ba0f733f63&utm_medium=copy_link" target="_blank" class="music-platform-link">Яндекс.Музыка</a>
                 </div>
             </div>
