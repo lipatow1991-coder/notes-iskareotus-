@@ -207,14 +207,8 @@ nav a:hover {
                 inset 0 -80px 80px -50px rgba(0,0,0,1);
 }
 
-/* ТУТ МЫ ВСТРАИВАЕМ ГОРГУЛИЙ ПРЯМО В ФОН РУН */
-.bg-runes { 
-    background-image: url('../images/gargoyle_left.png'), url('../images/gargoyle_right.png'), url('../images/bg_runes.jpg');
-    background-position: left center, right center, center;
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    background-size: 25% auto, 25% auto, cover; 
-}
-
+/* ТУТ ТОЛЬКО ФОН С РУНАМИ, БЕЗ ГОРГУЛИЙ */
+.bg-runes { background-image: url('../images/bg_runes.jpg'); }
 .bg-dungeon { background-image: url('../images/bg_dungeon.jpg'); }
 
 .section-title {
