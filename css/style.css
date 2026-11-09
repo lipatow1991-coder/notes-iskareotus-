@@ -115,23 +115,23 @@ nav a:hover {
 
 /* --- ГОРГУЛЬИ (ФИКСИРОВАНЫ НА ФОНЕ ЭКРАНА) --- */
 .gargoyle {
-    position: fixed; /* Держит их на месте при прокрутке */
+    position: fixed; 
     top: 50%; 
-    transform: translateY(-50%); /* Центрирует по вертикали */
-    height: 90vh; /* Высота 90% от окна */
+    transform: translateY(-50%); 
+    height: 90vh; 
     width: auto;
-    z-index: -1; /* Отправляет на задний план */
-    pointer-events: none; /* Не мешает кликать */
-    opacity: 0.5; /* Полупрозрачность, чтобы не перекрывать текст */
+    z-index: 0; /* Теперь они на нулевом слое (над фоном, но под текстом) */
+    pointer-events: none; 
+    opacity: 0.4; /* Сделали чуть прозрачнее, чтобы точно не мешали читать */
     filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.9));
 }
 
 .gargoyle-left {
-    left: -10px; /* Чуть-чуть прячем за левый край */
+    left: -10px; 
 }
 
 .gargoyle-right {
-    right: -10px; /* Чуть-чуть прячем за правый край */
+    right: -10px; 
 }
 
 /* Скрываем горгулий на телефонах, чтобы не мешали */
@@ -229,7 +229,7 @@ nav a:hover {
     background-position: center;
     border-top: 2px solid #111;
     position: relative;
-    z-index: 2; /* Контент поверх горгулий */
+    z-index: 1; /* Контент выше горгулий (z-index: 0) */
     
     /* ПЛАВНЫЕ ПЕРЕХОДЫ (ТЕНИ СВЕРХУ И СНИЗУ) */
     box-shadow: inset 0 80px 80px -50px rgba(0,0,0,1), 
@@ -364,7 +364,7 @@ footer {
     font-family: 'Grenze Gotisch', serif;
     font-size: 1.2rem;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 /* --- МОДАЛЬНОЕ ОКНО ПЛЕЕРА --- */
