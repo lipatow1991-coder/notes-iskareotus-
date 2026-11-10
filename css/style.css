@@ -11,7 +11,6 @@ body {
     line-height: 1.6;
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
-    /* ОБЫЧНЫЙ КУРСОР */
     cursor: default; 
 }
 
@@ -286,7 +285,20 @@ nav a:hover {
 }
 
 .about-image { flex: 1; min-width: 300px; }
-.about-image img { width: 100%; border-radius: 10px; border: 2px solid #444; }
+
+/* ПУЛЬСИРУЮЩАЯ РАМКА ВОКРУГ ФОТО */
+.about-image img { 
+    width: 100%; 
+    border-radius: 10px; 
+    border: 2px solid #ff0000; 
+    animation: pulseImageBorder 2s infinite alternate;
+}
+
+@keyframes pulseImageBorder {
+    0% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); border-color: #5a1a1a; }
+    100% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.9); border-color: #ff0000; }
+}
+
 .description-box { flex: 2; min-width: 300px; }
 .description-box p { font-size: 1.2rem; color: #ccc; margin-bottom: 15px; text-align: justify; }
 .description-box strong { color: #fff; font-size: 1.3rem; }
@@ -309,6 +321,7 @@ nav a:hover {
     max-width: 1200px;
     position: relative;
     z-index: 2;
+    perspective: 1000px; /* Для 3D-эффекта */
 }
 
 .album-card {
@@ -317,25 +330,28 @@ nav a:hover {
     border-radius: 10px;
     padding: 15px;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transform-style: preserve-3d; /* Для 3D-эффекта */
 }
 
+/* 3D-НАКЛОН И ТРЯСКА ПРИ НАВЕДЕНИИ */
 .album-card:hover {
     border-color: #ff0000;
     box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+    transform: translateY(-10px) rotateX(5deg) rotateY(-5deg); /* 3D-наклон */
     animation: shake 0.4s ease-in-out;
 }
 
 @keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg) translateY(-5px); }
-    20% { transform: translate(-2px, 0px) rotate(-1deg) translateY(-10px); }
-    40% { transform: translate(2px, -1px) rotate(1deg) translateY(-10px); }
-    60% { transform: translate(-1px, 2px) rotate(0deg) translateY(-10px); }
-    80% { transform: translate(1px, -1px) rotate(1deg) translateY(-10px); }
-    100% { transform: translate(0, 0) rotate(0) translateY(-10px); }
+    0% { transform: translate(1px, 1px) rotate(0deg) translateY(-5px) rotateX(5deg) rotateY(-5deg); }
+    20% { transform: translate(-2px, 0px) rotate(-1deg) translateY(-10px) rotateX(5deg) rotateY(-5deg); }
+    40% { transform: translate(2px, -1px) rotate(1deg) translateY(-10px) rotateX(5deg) rotateY(-5deg); }
+    60% { transform: translate(-1px, 2px) rotate(0deg) translateY(-10px) rotateX(5deg) rotateY(-5deg); }
+    80% { transform: translate(1px, -1px) rotate(1deg) translateY(-10px) rotateX(5deg) rotateY(-5deg); }
+    100% { transform: translate(0, 0) rotate(0) translateY(-10px) rotateX(5deg) rotateY(-5deg); }
 }
 
 .album-card img {
@@ -420,6 +436,35 @@ footer {
     box-shadow: 0 0 50px rgba(255, 0, 0, 0.6);
     position: relative;
     color: #fff;
+}
+
+/* --- ЭКВАЛАЙЗЕР В ПЛЕЕРЕ --- */
+.eq-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 4px;
+    height: 30px;
+    margin-bottom: 15px;
+}
+
+.eq-bar {
+    width: 6px;
+    background-color: #ff0000;
+    border-radius: 2px;
+    animation: eqBounce 1s infinite ease-in-out;
+    box-shadow: 0 0 10px #ff0000;
+}
+
+.eq-bar:nth-child(1) { animation-duration: 1.2s; height: 10px; }
+.eq-bar:nth-child(2) { animation-duration: 0.8s; height: 25px; }
+.eq-bar:nth-child(3) { animation-duration: 1.5s; height: 15px; }
+.eq-bar:nth-child(4) { animation-duration: 1.1s; height: 30px; }
+.eq-bar:nth-child(5) { animation-duration: 0.9s; height: 20px; }
+
+@keyframes eqBounce {
+    0%, 100% { transform: scaleY(0.3); }
+    50% { transform: scaleY(1); }
 }
 
 .close-btn {
