@@ -9,35 +9,26 @@
 </head>
 <body>
 
-    <!-- Контейнер для искр -->
     <div id="sparks-container"></div>
 
-    <!-- ЭКРАН ПРИВЕТСТВИЯ (ПРЕЛОАДЕР) -->
     <div id="intro-screen" onclick="startExperience()">
         <img src="images/logo.jpg" alt="Logo" class="intro-logo">
         <h2 class="intro-text">Нажмите, чтобы войти в мир готического металла</h2>
     </div>
 
-    <!-- Звук клика -->
     <audio id="clickSound" src="sounds/click.mp3" preload="auto"></audio>
-    
-    <!-- Фоновая музыка -->
     <audio id="bgMusic" src="sounds/ambient.mp3" loop></audio>
 
-    <!-- Меню навигации -->
     <nav>
         <a href="#home">Главная</a>
         <a href="#about">Описание</a>
         <a href="#music">Музыка</a>
-        
         <a href="https://www.tiktok.com/@notesiskareotus" target="_blank">TikTok</a>
         <a href="https://vk.com/notesiskareotus" target="_blank">ВК</a>
         <a href="https://t.me/Wechernihuter" target="_blank">Telegram</a>
-        
         <button id="musicBtn" class="music-btn">🔇 Выключить фон</button>
     </nav>
 
-    <!-- СЕКЦИЯ 1: ГЛАВНАЯ -->
     <section id="home" class="hero-section">
         <div class="hero-content fade-in">
             <h2 class="hero-subtitle">МУЗЫКАЛЬНАЯ ГРУППА</h2>
@@ -48,7 +39,6 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 2: ОПИСАНИЕ -->
     <section id="about" class="content-section bg-runes">
         <h2 class="section-title fade-in">О ПРОЕКТЕ</h2>
         <div class="about-container fade-in">
@@ -69,12 +59,10 @@
         </div>
     </section>
 
-    <!-- СЕКЦИЯ 3: ДИСКОГРАФИЯ -->
     <section id="music" class="content-section bg-dungeon">
         <h2 class="section-title fade-in">ДИСКОГРАФИЯ</h2>
         
         <div class="album-grid">
-            <!-- Альбом 1 -->
             <div class="album-card fade-in">
                 <img src="images/album1.jpg" alt="Мир Красной Луны">
                 <h3>Мир Красной Луны</h3>
@@ -90,7 +78,6 @@
                 </div>
             </div>
             
-            <!-- Альбом 2 -->
             <div class="album-card fade-in">
                 <img src="images/album2.jpg" alt="Пути Загробного Мира">
                 <h3>Пути Загробного Мира</h3>
@@ -105,7 +92,6 @@
                 </div>
             </div>
             
-            <!-- Альбом 3 -->
             <div class="album-card fade-in">
                 <img src="images/album3.jpg" alt="Последний Завет Ада">
                 <h3>Последний Завет Ада</h3>
@@ -119,7 +105,6 @@
                 </div>
             </div>
             
-            <!-- Альбом 4 -->
             <div class="album-card fade-in">
                 <img src="images/album4.jpg" alt="Грехи Небес">
                 <h3>Грехи Небес</h3>
@@ -135,7 +120,6 @@
                 </div>
             </div>
             
-            <!-- Альбом 5 -->
             <div class="album-card fade-in">
                 <img src="images/album5.jpg" alt="Земли Пролитанные Болью">
                 <h3>Земли Пролитанные Болью</h3>
@@ -152,7 +136,6 @@
         </div>
     </section>
 
-    <!-- ПОДВАЛ -->
     <footer>
         <p>© 2026 NOTES ISKAREOTUS.</p>
     </footer>
@@ -162,9 +145,18 @@
         <div class="modal-content">
             <span class="close-btn" onclick="closeAlbum()">&times;</span>
             <h2 id="modalTitle">Название альбома</h2>
+            
+            <!-- ЭКВАЛАЙЗЕР -->
+            <div class="eq-container">
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+            </div>
+
             <div id="trackList" class="track-list"></div>
             <audio id="modalPlayer" controls style="width: 100%; margin-top: 20px;"></audio>
-            <!-- Кнопка тряски -->
             <button id="shakeBtn" class="shake-btn">📳 ВКЛЮЧИТЬ ТРЯСКУ</button>
         </div>
     </div>
