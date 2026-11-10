@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // --- 1. ЗВУК ПРИ КЛИКЕ ---
     const clickSound = document.getElementById("clickSound");
-    // Добавил .shake-btn в список, чтобы при нажатии на кнопку тряски тоже был звук клика
     const clickableElements = document.querySelectorAll("nav a, .album-card, .close-btn, .download-link, .shake-btn");
     
     clickableElements.forEach(element => {
@@ -76,32 +75,43 @@ document.addEventListener("DOMContentLoaded", () => {
             const spark = document.createElement("div");
             spark.classList.add("spark");
             
-            // Случайный размер от 2 до 6 пикселей
             const size = Math.random() * 4 + 2;
             spark.style.width = `${size}px`;
             spark.style.height = `${size}px`;
-            
-            // Случайная позиция по горизонтали
             spark.style.left = `${Math.random() * 100}vw`;
-            
-            // Случайная скорость полета (от 3 до 7 секунд)
             spark.style.animationDuration = `${Math.random() * 4 + 3}s`;
             
             sparksContainer.appendChild(spark);
             
-            // Удаляем искру из памяти после того, как она улетела
             setTimeout(() => {
                 spark.remove();
             }, 7000);
         }
-        
-        // Создаем искру каждые 300 миллисекунд
         setInterval(createSpark, 300);
+    }
+
+    // --- 5. ЛОГИКА КНОПКИ ТРЯСКИ В ПЛЕЕРЕ ---
+    const shakeBtn = document.getElementById('shakeBtn');
+    const modalContent = document.querySelector('.modal-content');
+
+    if (shakeBtn && modalContent) {
+        shakeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modalContent.classList.toggle('shake-active');
+            
+            if (modalContent.classList.contains('shake-active')) {
+                shakeBtn.innerText = "🛑 ВЫКЛЮЧИТЬ ТРЯСКУ";
+                shakeBtn.classList.add('active');
+            } else {
+                shakeBtn.innerText = "📳 ВКЛЮЧИТЬ ТРЯСКУ";
+                shakeBtn.classList.remove('active');
+            }
+        });
     }
 });
 
 
-// --- 5. ФУНКЦИЯ ОТКРЫТИЯ АЛЬБОМА (ПЛЕЕР) ---
+// --- 6. ФУНКЦИЯ ОТКРЫТИЯ АЛЬБОМА (ПЛЕЕР) ---
 function openAlbum(albumTitle, folderPath, tracks) {
     const modal = document.getElementById('albumModal');
     const modalTitle = document.getElementById('modalTitle');
@@ -143,12 +153,11 @@ function openAlbum(albumTitle, folderPath, tracks) {
     modal.style.display = "flex";
 }
 
-// --- 6. ФУНКЦИЯ ЗАКРЫТИЯ ПЛЕЕРА ---
+// --- 7. ФУНКЦИЯ ЗАКРЫТИЯ ПЛЕЕРА ---
 function closeAlbum() {
     const modal = document.getElementById('albumModal');
     const player = document.getElementById('modalPlayer');
     
-    // Останавливаем тряску при закрытии
     const shakeBtn = document.getElementById('shakeBtn');
     const modalContent = document.querySelector('.modal-content');
     if (modalContent) modalContent.classList.remove('shake-active');
@@ -163,23 +172,3 @@ window.onclick = function(event) {
         closeAlbum();
     }
 }
-
-// --- 7. ЛОГИКА КНОПКИ ТРЯСКИ В ПЛЕЕРЕ ---
-window.addEventListener('load', () => {
-    const shakeBtn = document.getElementById('shakeBtn');
-    const modalContent = document.querySelector('.modal-content');
-
-    if (shakeBtn && modalContent) {
-        shakeBtn.addEventListener('click', () => {
-            modalContent.classList.toggle('shake-active');
-            
-            if (modalContent.classList.contains('shake-active')) {
-                shakeBtn.innerText = "🛑 ВЫКЛЮЧИТЬ ТРЯСКУ";
-                shakeBtn.classList.add('active');
-            } else {
-                shakeBtn.innerText = "📳 ВКЛЮЧИТЬ ТРЯСКУ";
-                shakeBtn.classList.remove('active');
-            }
-        });
-    }
-});
