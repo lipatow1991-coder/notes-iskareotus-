@@ -11,7 +11,8 @@ body {
     line-height: 1.6;
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="5" fill="red" opacity="0.8"/><circle cx="10" cy="10" r="8" fill="none" stroke="red" stroke-width="1" opacity="0.4"/></svg>') 10 10, auto; /* Кровавый курсор */
+    /* ОБЫЧНЫЙ КУРСОР */
+    cursor: default; 
 }
 
 /* --- КОНТЕЙНЕР ДЛЯ ИСКР --- */
@@ -19,7 +20,7 @@ body {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     pointer-events: none;
-    z-index: 0; /* Позади текста */
+    z-index: 0;
     overflow: hidden;
 }
 
@@ -526,9 +527,9 @@ footer {
     transform: translateY(0);
 }
 
-/* Анимация для тряски окна плеера */
+/* --- АНИМАЦИЯ ТРЯСКИ ОКНА ПЛЕЕРА --- */
 .shake-active {
-    animation: shakeWindow 0.1s infinite;
+    animation: shakeWindow 0.1s infinite !important;
 }
 
 @keyframes shakeWindow {
