@@ -685,3 +685,23 @@ a:focus-visible, button:focus-visible, #intro-screen:focus-visible {
  .section-lead{padding:0 6px;font-size:1rem;}
 }
 @media(prefers-reduced-motion:reduce){.primary-cta,.secondary-cta,.platform-buttons a,.project-card a{transition:none;transform:none !important;}}
+
+
+/* Коммерческие музыкальные предложения NOTES ISKAREOTUS */
+.order-offers { width:100%; max-width:1120px; margin:0 auto 28px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+.order-offer { display:flex; flex-direction:column; min-width:0; padding:26px 23px; border:1px solid #684337; border-radius:12px; background:rgba(10,6,10,.94); box-shadow:0 10px 24px #0006; }
+.order-offer-label { color:#e6bc83; letter-spacing:.11em; font-size:.78rem; text-transform:uppercase; font-weight:800; margin-bottom:9px; }
+.order-offer h3 { color:#f5e2c9; font-family:'Grenze Gotisch',serif; font-size:clamp(1.4rem,2.2vw,2rem); line-height:1.2; margin-bottom:15px; }
+.order-offer p { font-size:1.02rem; line-height:1.6; color:#e7d8d2; margin:0 0 16px; }
+.order-offer .order-offer-result { margin-top:auto; font-size:.95rem; color:#d8c7ba; border-top:1px solid #56372d; padding-top:14px; }
+.order-offer a { display:inline-flex; justify-content:center; align-items:center; min-height:46px; text-align:center; border:1px solid #a13e33; border-radius:8px; padding:10px 12px; color:#fff0df; background:#5c1a1f; font-weight:700; text-decoration:none; transition:background .15s ease,transform .15s ease; }
+.order-offer a:hover, .order-offer a:focus-visible { background:#8b2c32; transform:translateY(-1px); }
+.order-steps { margin:12px 0 24px; padding-left:1.5rem; display:grid; gap:12px; }
+.order-steps li { color:#e6d9cf; font-size:1.06rem; line-height:1.6; padding-left:4px; }
+.order-steps li::marker { color:#dfac72; font-weight:800; }
+.orders-panel p.order-proof { border-top:1px solid #57372d; margin-top:8px; padding-top:18px; color:#f4e6d8; }
+.order-proof a { color:#eec48d; text-underline-offset:3px; }
+.orders-panel p.orders-disclosure { font-size:.85rem; color:#c9bdb7; line-height:1.55; margin-top:20px; margin-bottom:0; }
+@media (max-width:930px){ .order-offers{grid-template-columns:1fr;max-width:620px;} .order-offer{padding:23px 19px;} }
+@media (max-width:760px){.order-steps{padding-left:1.25rem;}.order-steps li{font-size:.98rem;}.order-offer a{width:100%;}}
+@media (prefers-reduced-motion:reduce){.order-offer a{transition:none;transform:none !important;}}
