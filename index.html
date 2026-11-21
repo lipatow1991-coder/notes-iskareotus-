@@ -7,6 +7,13 @@
     <meta name="description" content="NOTES ISKAREOTUS — симфонический готик-метал, тёмное фэнтези, пять альбомов и музыка для слушателей.">
     <meta name="theme-color" content="#080506">
     <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="canonical" href="https://lipatow1991-coder.github.io/notes-iskareotus-/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:title" content="NOTES ISKAREOTUS — музыка, альбомы и творческие проекты">
+    <meta property="og:description" content="Симфонический готик-метал, готическое фэнтези, пять релизов. Слушайте музыку и знакомьтесь с другими проектами автора.">
+    <meta property="og:image" content="https://lipatow1991-coder.github.io/notes-iskareotus-/images/logo.jpg">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicGroup","name":"NOTES ISKAREOTUS","genre":["Symphonic gothic metal","Dark fantasy metal"],"url":"https://lipatow1991-coder.github.io/notes-iskareotus-/","sameAs":["https://www.tiktok.com/@notesiskareotus","https://open.spotify.com/artist/7x7m8jPYnWod0TBNC439X2","https://music.yandex.ru/artist/26548838"]}</script>
     <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -26,6 +33,8 @@
         <a href="#home">Главная</a>
         <a href="#about">Описание</a>
         <a href="#music">Музыка</a>
+        <a href="#projects">Другие проекты</a>
+        <a href="#orders">Музыка на заказ</a>
         <a href="https://www.tiktok.com/@notesiskareotus" target="_blank" rel="noopener noreferrer">TikTok</a>
         <a href="https://vk.com/notesiskareotus" target="_blank" rel="noopener noreferrer">ВК</a>
         <a href="https://t.me/Wechernihuter" target="_blank" rel="noopener noreferrer">Telegram</a>
@@ -34,10 +43,14 @@
 
     <section id="home" class="hero-section">
         <div class="hero-content fade-in">
-            <h2 class="hero-subtitle">МУЗЫКАЛЬНАЯ ГРУППА</h2>
+            <h2 class="hero-subtitle">НЕЗАВИСИМЫЙ МУЗЫКАЛЬНЫЙ ПРОЕКТ</h2>
             <h1 class="hero-title">NOTES ISKAREOTUS</h1>
             <div class="logo-container">
                 <img src="images/logo.jpg" alt="NOTES ISKAREOTUS Logo" class="main-logo">
+            </div>
+            <div class="hero-actions">
+                <a class="primary-cta" href="#music">Слушать альбомы</a>
+                <a class="secondary-cta" href="#orders">Заказать музыку</a>
             </div>
         </div>
     </section>
@@ -65,9 +78,19 @@
     <section id="music" class="content-section bg-dungeon">
         <h2 class="section-title fade-in">ДИСКОГРАФИЯ</h2>
         
+
+        <div class="platform-strip" aria-label="Музыкальные платформы">
+            <p>Все опубликованные релизы и страницы исполнителя</p>
+            <div class="platform-buttons">
+                <a href="https://open.spotify.com/artist/7x7m8jPYnWod0TBNC439X2/discography" target="_blank" rel="noopener noreferrer">Spotify: дискография</a>
+                <a href="https://music.yandex.ru/artist/26548838" target="_blank" rel="noopener noreferrer">Яндекс Музыка: исполнитель</a>
+                <a href="https://music.mts.ru/artist/26548838" target="_blank" rel="noopener noreferrer">КИОН Музыка: исполнитель</a>
+                <a href="https://band.link/cI1AL" target="_blank" rel="noopener noreferrer">BandLink: «Последний Завет Ада»</a>
+            </div>
+        </div>
         <div class="album-grid">
             <div class="album-card fade-in">
-                <img src="images/album1.jpg" alt="Мир Красной Луны">
+                <img loading="lazy" decoding="async" src="images/album1.jpg" alt="Мир Красной Луны">
                 <h3>Мир Красной Луны</h3>
                 <div class="album-actions">
                     <button type="button" class="music-platform-link album-play-button" onclick="openAlbum('Мир Красной Луны', 'music/album1', [
@@ -77,12 +100,12 @@
                         { file: '07.mp3', title: 'Поля Красных Цветов' }, { file: '08.mp3', title: 'Станцуй Последний Раз' },
                         { file: '09.mp3', title: 'Слезы Темных Волн' }, { file: '10.mp3', title: 'Любовь в Объятьях Ночи' }
                     ])">▶ Слушать альбом</button>
-                    <a href="https://music.yandex.ru/artist/26548838?family=1&ref_id=b00770ee-cb99-4805-b20c-89ba0f733f63&utm_medium=copy_link" target="_blank" rel="noopener noreferrer" class="music-platform-link">Яндекс.Музыка</a>
+                    <a href="https://www.iheart.com/artist/notes-iskareotus-52176447/albums/-429440663/" target="_blank" rel="noopener noreferrer" class="music-platform-link" aria-label="Мир Красной Луны: iHeart — альбом">iHeart — альбом</a>
                 </div>
             </div>
             
             <div class="album-card fade-in">
-                <img src="images/album2.jpg" alt="Пути Загробного Мира">
+                <img loading="lazy" decoding="async" src="images/album2.jpg" alt="Пути Загробного Мира">
                 <h3>Пути Загробного Мира</h3>
                 <div class="album-actions">
                     <button type="button" class="music-platform-link album-play-button" onclick="openAlbum('Пути Загробного Мира', 'music/album2', [
@@ -91,40 +114,41 @@
                         { file: '05.mp3', title: 'Кровавая Принцесса' }, { file: '06.mp3', title: 'Курганы Вечных Песен' },
                         { file: '07.mp3', title: 'Лабиринты из Шелка' }, { file: '08.mp3', title: 'Симфония Лича' }
                     ])">▶ Слушать альбом</button>
-                    <a href="https://music.yandex.ru/artist/26548838?family=1&ref_id=b00770ee-cb99-4805-b20c-89ba0f733f63&utm_medium=copy_link" target="_blank" rel="noopener noreferrer" class="music-platform-link">Яндекс.Музыка</a>
+                    <a href="https://open.spotify.com/album/4H2ua5yloYhhaZg8XO0OPh" target="_blank" rel="noopener noreferrer" class="music-platform-link" aria-label="Пути Загробного Мира: Spotify — альбом">Spotify — альбом</a>
                 </div>
             </div>
             
             <div class="album-card fade-in">
-                <img src="images/album3.jpg" alt="Последний Завет Ада">
-                <h3>Последний Завет Ада</h3>
+                <img loading="lazy" decoding="async" src="images/album3.jpg" alt="Грехи Небес">
+                <h3>Грехи Небес</h3>
                 <div class="album-actions">
-                    <button type="button" class="music-platform-link album-play-button" onclick="openAlbum('Последний Завет Ада', 'music/album3', [
+                    <button type="button" class="music-platform-link album-play-button" onclick="openAlbum('Грехи Небес', 'music/album3', [
                         { file: '01.mp3', title: 'Падение Люцифера' }, { file: '02.mp3', title: 'Первый Грех' },
                         { file: '03.mp3', title: 'Первая Женщина' }, { file: '04.mp3', title: 'Ад Данте' },
                         { file: '05.mp3', title: 'Саломея' }, { file: '06.mp3', title: 'Тридцать Монет' }
                     ])">▶ Слушать альбом</button>
-                    <a href="https://music.yandex.ru/artist/26548838?family=1&ref_id=b00770ee-cb99-4805-b20c-89ba0f733f63&utm_medium=copy_link" target="_blank" rel="noopener noreferrer" class="music-platform-link">Яндекс.Музыка</a>
+                    <a href="https://open.spotify.com/album/3oR4PMqYG78z63fw93By2l" target="_blank" rel="noopener noreferrer" class="music-platform-link" aria-label="Грехи Небес: Spotify — релиз">Spotify — релиз</a>
                 </div>
             </div>
             
             <div class="album-card fade-in">
-                <img src="images/album4.jpg" alt="Грехи Небес">
-                <h3>Грехи Небес</h3>
+                <img loading="lazy" decoding="async" src="images/album4.jpg" alt="Последний Завет Ада">
+                <h3>Последний Завет Ада</h3>
                 <div class="album-actions">
-                    <button type="button" class="music-platform-link album-play-button" onclick="openAlbum('Грехи Небес', 'music/album4', [
+                    <button type="button" class="music-platform-link album-play-button" onclick="openAlbum('Последний Завет Ада', 'music/album4', [
                         { file: '01.mp3', title: 'Апокалипсис' }, { file: '02.mp3', title: 'Огонь Обжигающий Небеса' },
                         { file: '03.mp3', title: 'Престол Бездны' }, { file: '04.mp3', title: 'Падший Серафим' },
                         { file: '05.mp3', title: 'Дюны Боли' }, { file: '06.mp3', title: 'Огненная Река' },
                         { file: '07.mp3', title: 'Глубины Чревоугодия' }, { file: '08.mp3', title: 'Холмы Наслаждения' },
                         { file: '09.mp3', title: 'Я Есть Легион' }
                     ])">▶ Слушать альбом</button>
-                    <a href="https://music.yandex.ru/artist/26548838?family=1&ref_id=b00770ee-cb99-4805-b20c-89ba0f733f63&utm_medium=copy_link" target="_blank" rel="noopener noreferrer" class="music-platform-link">Яндекс.Музыка</a>
+                    <a href="https://open.spotify.com/album/46SamwdEtzMplhnjJM3x2G" target="_blank" rel="noopener noreferrer" class="music-platform-link" aria-label="Последний Завет Ада: Spotify — альбом">Spotify — альбом</a>
+                    <a href="https://band.link/cI1AL" target="_blank" rel="noopener noreferrer" class="music-platform-link" aria-label="BandLink: Последний Завет Ада">BandLink</a>
                 </div>
             </div>
             
             <div class="album-card fade-in">
-                <img src="images/album5.jpg" alt="Земли Пропитанные Болью">
+                <img loading="lazy" decoding="async" src="images/album5.jpg" alt="Земли Пропитанные Болью">
                 <h3>Земли Пропитанные Болью</h3>
                 <div class="album-actions">
                     <button type="button" class="music-platform-link album-play-button" onclick="openAlbum('Земли Пропитанные Болью', 'music/album5', [
@@ -133,9 +157,47 @@
                         { file: '05.mp3', title: 'Голод' }, { file: '06.mp3', title: 'Война' },
                         { file: '07.mp3', title: 'Красная Графиня' }, { file: '08.mp3', title: 'Пепел Империи' }
                     ])">▶ Слушать альбом</button>
-                    <a href="https://music.yandex.ru/artist/26548838?family=1&ref_id=b00770ee-cb99-4805-b20c-89ba0f733f63&utm_medium=copy_link" target="_blank" rel="noopener noreferrer" class="music-platform-link">Яндекс.Музыка</a>
+                    <a href="https://open.spotify.com/album/0d7dHUuxMsRQg1vZ2daqdB" target="_blank" rel="noopener noreferrer" class="music-platform-link" aria-label="Земли Пропитанные Болью: Spotify — альбом">Spotify — альбом</a>
                 </div>
             </div>
+        </div>
+    </section>
+
+
+    <section id="projects" class="content-section bg-runes">
+        <h2 class="section-title fade-in">ДРУГИЕ МУЗЫКАЛЬНЫЕ МИРЫ</h2>
+        <p class="section-lead">Три музыкальных направления, созданных одним независимым автором. У каждого — своё звучание.</p>
+        <div class="projects-grid">
+            <article class="project-card">
+                <h3>NOTES ISKAREOTUS</h3>
+                <p>Симфонический готик-метал, тяжёлые гитары, хоры и мрачные истории.</p>
+                <a href="https://www.tiktok.com/@notesiskareotus" target="_blank" rel="noopener noreferrer">TikTok NOTES ISKAREOTUS</a>
+            </article>
+            <article class="project-card">
+                <h3>S-HABAS-H</h3>
+                <p>Оккультная электроника, Witch House и ритуальная тёмная эстетика. Пока музыка представлена в TikTok.</p>
+                <a href="https://www.tiktok.com/@shabash6775" target="_blank" rel="noopener noreferrer">TikTok S-HABAS-H</a>
+            </article>
+            <article class="project-card">
+                <h3>FAIRY-TALE LAND</h3>
+                <p>Славянские мифы, фантастические сюжеты и киберпанк. Пока музыка представлена в TikTok.</p>
+                <a href="https://www.tiktok.com/@fairytale.land07" target="_blank" rel="noopener noreferrer">TikTok FAIRY-TALE LAND</a>
+            </article>
+        </div>
+    </section>
+
+    <section id="orders" class="content-section bg-dungeon">
+        <h2 class="section-title fade-in">МУЗЫКА НА ЗАКАЗ</h2>
+        <p class="section-lead">Персональные песни, музыкальные поздравления и тематические композиции для видео, игр и творческих проектов.</p>
+        <div class="orders-panel">
+            <h3>Твоя история может стать песней</h3>
+            <p>Расскажите о событии, персонаже или настроении. Я подготовлю концепцию, текст и музыкальное звучание в согласованном стиле. При создании музыки используются технологии генеративного ИИ, в том числе Suno.</p>
+            <p>Стоимость и сроки обсуждаются индивидуально. Примеры — в альбомах выше.</p>
+            <div class="hero-actions">
+                <a class="primary-cta" href="https://t.me/Wechernihuter" target="_blank" rel="noopener noreferrer">Обсудить идею в Telegram</a>
+                <a class="secondary-cta" href="https://vk.com/notesiskareotus" target="_blank" rel="noopener noreferrer">Связаться во ВКонтакте</a>
+            </div>
+            <p class="orders-note">Напишите, для кого нужна песня, какой жанр вы хотите и к какой дате она нужна.</p>
         </div>
     </section>
 
