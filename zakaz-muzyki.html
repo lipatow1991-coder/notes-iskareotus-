@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10070c">
+  <title>Песня на заказ и музыка для видео — NOTES ISKAREOTUS</title>
+  <meta name="description" content="Песня по вашей истории, музыка для видео и саундтрек для игры. Онлайн-заявка без регистрации. NOTES ISKAREOTUS, Беларусь.">
+  <link rel="canonical" href="https://lipatow1991-coder.github.io/notes-iskareotus-/zakaz-muzyki.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Музыка на заказ — NOTES ISKAREOTUS">
+  <meta property="og:description" content="Соберите короткий музыкальный бриф за минуту и отправьте исполнителю в Telegram.">
+  <meta property="og:image" content="https://lipatow1991-coder.github.io/notes-iskareotus-/images/logo.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Персональные песни и музыка на заказ","serviceType":"Создание музыкальных композиций","description":"Музыкальные поздравления, песни по личным историям, музыка для видео и игровых проектов. Работа с использованием генеративного ИИ. Стоимость, сроки и права обсуждаются до заказа.","areaServed":{"@type":"Country","name":"Беларусь"},"provider":{"@type":"MusicGroup","name":"NOTES ISKAREOTUS","url":"https://lipatow1991-coder.github.io/notes-iskareotus-/"},"url":"https://lipatow1991-coder.github.io/notes-iskareotus-/zakaz-muzyki.html"}</script>
+  <style>
+    :root{color-scheme:dark;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#090609;color:#f5ebdf;}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 85% 5%,#4b1420 0,transparent 33%),radial-gradient(ellipse at 10% 55%,#331724 0,transparent 36%),#090609;}
+    a{color:#f4c48e}
+    .shell{width:min(1020px,100% - 32px);margin:auto}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:19px 0;border-bottom:1px solid #5b3239}
+    .nav-brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.025em;text-decoration:none;color:#fff1df}
+    .nav-brand img{width:44px;height:44px;object-fit:cover;border-radius:10px}
+    .nav .back{font-weight:600;text-decoration:none}
+    header{padding:48px 0 18px;text-align:center}
+    .eyebrow{font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;color:#dcb47e;font-weight:800}
+    h1{margin:12px auto;max-width:850px;font-size:clamp(2.05rem,5vw,3.8rem);line-height:1.1}
+    .intro{font-size:1.08rem;color:#e4d6cb;line-height:1.65;max-width:720px;margin:0 auto}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:32px 0}
+    .feature{border:1px solid #654049;border-radius:12px;padding:17px;background:#160d13ad;}
+    .feature strong{display:block;color:#f2c78f;margin-bottom:7px}
+    .feature span{color:#daccc4;line-height:1.5;font-size:.94rem}
+    .form-wrap{border:1px solid #854b4b;background:rgba(12,8,12,.92);border-radius:18px;padding:clamp(20px,4vw,42px);box-shadow:0 20px 80px #0009}
+    h2{font-size:clamp(1.45rem,3vw,2rem);margin:0 0 10px}
+    .hint{font-size:.95rem;color:#cdbfb7;line-height:1.55;margin:0 0 24px}
+    .fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+    .field.full{grid-column:1/-1}
+    label{display:block;margin:0 0 8px;font-weight:700;color:#f3e1d0}
+    label small{font-weight:400;color:#b5a9a3}
+    input,select,textarea{width:100%;border:1px solid #74545a;background:#21161c;color:#fff5ea;border-radius:9px;font:inherit;min-height:48px;padding:12px;outline-offset:3px}
+    input:focus,select:focus,textarea:focus{outline:2px solid #e4a365;border-color:#e4a365}
+    textarea{min-height:114px;resize:vertical;line-height:1.5}
+    textarea::placeholder,input::placeholder{color:#a9a0a0}
+    button,.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border-radius:9px;font:700 1rem system-ui,sans-serif;cursor:pointer;text-align:center;text-decoration:none}
+    .primary{background:#a32a37;border:1px solid #dd7580;color:#fff}
+    .primary:hover{background:#c03542}
+    .secondary{background:#23161c;border:1px solid #a77974;color:#fff2e4}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .output{margin-top:22px;padding:20px;background:#190f17;border:1px solid #725055;border-radius:12px}
+    .output[hidden]{display:none}
+    #message{min-height:210px;font-size:.96rem}
+    .status{color:#ecd19f;font-size:.93rem;min-height:22px;margin:10px 0 0}
+    .fine{font-size:.89rem;line-height:1.58;color:#c9b9b3;margin:16px 0 0}
+    .faq{margin:38px 0 52px}
+    .faq h2{margin-bottom:16px}
+    .faq details{border-bottom:1px solid #4b353a;padding:13px 2px}
+    .faq summary{cursor:pointer;font-weight:700}
+    .faq p{line-height:1.6;color:#ddcfc6}
+    footer{padding:26px 0 40px;border-top:1px solid #4a323a;text-align:center;color:#bfaeab;font-size:.86rem}
+    @media(max-width:680px){.nav{padding:12px 0}.nav-brand{font-size:.91rem}.nav-brand img{width:38px;height:38px}.feature-grid,.fields{grid-template-columns:1fr}.feature-grid{margin:25px 0}.actions>*{width:100%}header{padding-top:34px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav class="nav" aria-label="Навигация">
+      <a class="nav-brand" href="index.html"><img src="images/logo.jpg" alt="" width="44" height="44">NOTES ISKAREOTUS</a>
+      <a class="back" href="index.html#orders">← На сайт</a>
+    </nav>
+    <header>
+      <div class="eyebrow">Персональная музыка · Беларусь и онлайн</div>
+      <h1>Твоя история может стать песней</h1>
+      <p class="intro">Песня в подарок, тема для ролика или саундтрек для игрового мира. Заполни короткий бриф, скопируй заявку и отправь её в Telegram. Без регистрации и без обязательной оплаты.</p>
+    </header>
+    <div class="feature-grid" aria-label="Какие музыкальные заказы доступны">
+      <div class="feature"><strong>🎁 Песня в подарок</strong><span>День рождения, годовщина, признание или история близкого человека.</span></div>
+      <div class="feature"><strong>🎬 Музыка для видео</strong><span>Заставка, трейлер, джингл или музыкальное сопровождение контента.</span></div>
+      <div class="feature"><strong>🏰 Музыка для игры</strong><span>Готика, тёмное фэнтези, атмосферная локация или боевой саундтрек.</span></div>
+    </div>
+    <main>
+      <section class="form-wrap" aria-labelledby="brief-title">
+        <h2 id="brief-title">Создать заявку</h2>
+        <p class="hint">Это предварительный запрос. Стоимость, сроки, правки и условия использования обсуждаются до начала заказа.</p>
+        <form id="brief">
+          <div class="fields">
+            <div class="field">
+              <label for="service">Что нужно? *</label>
+              <select id="service" name="service" required>
+                <option value="personal">Песня по личной истории</option>
+                <option value="video">Музыка для видео или блога</option>
+                <option value="game">Саундтрек для игры</option>
+                <option value="other">Другая музыкальная задача</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="usage">Где будете использовать? *</label>
+              <select id="usage" name="usage" required>
+                <option value="Лично: подарок или прослушивание">Лично: подарок, для себя</option>
+                <option value="Публично: соцсети или видео">Публично: соцсети или видео</option>
+                <option value="В коммерческом проекте">В коммерческом проекте</option>
+                <option value="Пока не знаю">Пока не знаю</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="purpose">Для чего эта музыка? * <small>(например, поздравление или заставка ролика)</small></label>
+              <input id="purpose" name="purpose" required maxlength="220" placeholder="Песня для мамы на юбилей, о нашей семье…">
+            </div>
+            <div class="field">
+              <label for="mood">Жанр и настроение</label>
+              <input id="mood" name="mood" maxlength="150" placeholder="Рок, поп, нежная, эпическая, мрачная…">
+            </div>
+            <div class="field">
+              <label for="duration">Примерная длительность</label>
+              <select id="duration" name="duration">
+                <option value="Пока не знаю">Пока не знаю</option>
+                <option value="До 30 секунд">До 30 секунд</option>
+                <option value="30–90 секунд">30–90 секунд</option>
+                <option value="2–4 минуты">2–4 минуты</option>
+                <option value="Более 4 минут">Более 4 минут</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="deadline">Желаемый срок <small>(необязательно)</small></label>
+              <input id="deadline" name="deadline" type="date">
+            </div>
+            <div class="field">
+              <label for="budget">Ориентир бюджета</label>
+              <select id="budget" name="budget">
+                <option value="Хочу узнать стоимость">Хочу узнать стоимость</option>
+                <option value="До 79 BYN">До 79 BYN</option>
+                <option value="79–149 BYN">79–149 BYN</option>
+                <option value="150–299 BYN">150–299 BYN</option>
+                <option value="300 BYN и выше">300 BYN и выше</option>
+                <option value="Другая валюта / договоримся">Другая валюта / договоримся</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="details">Детали и пожелания <small>(необязательно)</small></label>
+              <textarea id="details" name="details" maxlength="1500" placeholder="Сюжет, имя, несколько важных слов, примеры атмосферы, ссылка на референс…"></textarea>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="primary" type="submit">Сформировать заявку</button>
+            <a class="button secondary" href="https://t.me/Wechernihuter" target="_blank" rel="noopener noreferrer">Написать напрямую в Telegram</a>
+          </div>
+        </form>
+        <div class="output" id="result" hidden aria-live="polite">
+          <h2>Готовая заявка</h2>
+          <p class="hint">Скопируй текст, затем открой Telegram и вставь его в чат. Автоматически ничего не отправляется.</p>
+          <label for="message">Текст для исполнителя</label>
+          <textarea id="message" readonly></textarea>
+          <div class="actions">
+            <button type="button" id="copy" class="primary">Скопировать текст заявки</button>
+            <a class="button secondary" href="https://t.me/Wechernihuter" target="_blank" rel="noopener noreferrer">Открыть Telegram</a>
+          </div>
+          <p class="status" id="status" role="status"></p>
+        </div>
+        <p class="fine">Приватность: заполненные поля обрабатываются только в браузере и не отправляются на сайт. Не указывайте в заявке пароли, документы или чужие чувствительные данные.</p>
+        <p class="fine">Производство музыкальных вариантов происходит с использованием генеративного ИИ, включая Suno. Исключительные авторские права и лицензии на коммерческое использование не обещаются автоматически — условия уточняем индивидуально.</p>
+      </section>
+      <section class="faq" aria-label="Вопросы о заказе">
+        <h2>Частые вопросы</h2>
+        <details><summary>Можно ли заказать музыку не в стиле метал?</summary><p>Да. Желаемый жанр и атмосфера обсуждаются до начала работы. Примеры готового звучания есть в <a href="index.html#music">дискографии проекта</a>.</p></details>
+        <details><summary>Сколько стоит создание песни?</summary><p>Стоимость зависит от длительности, сложности текста, числа вариантов и условий использования. Сначала отправьте задачу — затем согласуем цену и объём работы до оплаты.</p></details>
+        <details><summary>Как передаётся готовая музыка?</summary><p>Базовый вариант — согласованный файл MP3. Другие форматы и количество правок обсуждаются до начала выполнения.</p></details>
+        <details><summary>Можно ли использовать результат в коммерческом проекте?</summary><p>Это нужно указать в брифе. Возможность коммерческого использования и объём предоставляемых прав обсуждаются отдельно с учётом условий инструментов генеративного ИИ.</p></details>
+      </section>
+    </main>
+    <footer><a href="index.html">NOTES ISKAREOTUS</a> · 2026 · <a href="https://band.link/ZZAbz" target="_blank" rel="noopener noreferrer">Послушать музыку</a></footer>
+  </div>
+  <script>
+  (function(){
+    "use strict";
+    var form=document.getElementById("brief"), result=document.getElementById("result");
+    var message=document.getElementById("message"), status=document.getElementById("status");
+    var serviceNames={personal:"Песня по личной истории",video:"Музыка для видео или блога",game:"Саундтрек для игры",other:"Другая музыкальная задача"};
+    var selected=new URLSearchParams(window.location.search).get("service");
+    if(Object.prototype.hasOwnProperty.call(serviceNames,selected)){document.getElementById("service").value=selected;}
+    function val(id){return document.getElementById(id).value.trim();}
+    function build(){
+      return [
+        "Здравствуйте! Хочу обсудить музыкальный заказ.",
+        "",
+        "Формат: "+serviceNames[val("service")],
+        "Использование: "+val("usage"),
+        "Для чего: "+val("purpose"),
+        "Жанр/настроение: "+(val("mood")||"Обсудим"),
+        "Длительность: "+val("duration"),
+        "Желаемая дата: "+(val("deadline")||"Не указана"),
+        "Ориентир бюджета: "+val("budget"),
+        "Детали: "+(val("details")||"Обсудим"),
+        "",
+        "Подскажите, пожалуйста, цену, сроки и условия использования."
+      ].join("\n");
+    }
+    form.addEventListener("submit",function(e){
+      e.preventDefault();
+      if(!form.reportValidity())return;
+      message.value=build();
+      result.hidden=false;status.textContent="Заявка сформирована. Скопируйте её и отправьте в Telegram.";
+      result.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+    });
+    document.getElementById("copy").addEventListener("click",async function(){
+      if(!message.value)return;
+      try{
+        if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(message.value);}
+        else {message.focus();message.select();if(!document.execCommand("copy"))throw new Error("copy");}
+        status.textContent="Текст скопирован. Откройте Telegram и вставьте его в сообщение.";
+      }catch(err){message.focus();message.select();status.textContent="Выделен текст заявки. Нажмите «Копировать» в меню телефона и вставьте в Telegram.";}
+    });
+  })();
+  </script>
+</body>
+</html>
