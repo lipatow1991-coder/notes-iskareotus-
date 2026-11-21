@@ -705,3 +705,8 @@ a:focus-visible, button:focus-visible, #intro-screen:focus-visible {
 @media (max-width:930px){ .order-offers{grid-template-columns:1fr;max-width:620px;} .order-offer{padding:23px 19px;} }
 @media (max-width:760px){.order-steps{padding-left:1.25rem;}.order-steps li{font-size:.98rem;}.order-offer a{width:100%;}}
 @media (prefers-reduced-motion:reduce){.order-offer a{transition:none;transform:none !important;}}
+
+/* Optional brief form link while preserving direct contact */
+.order-offer a + a{margin-top:9px;}
+.order-offer a.brief-link{background:#983039;border-color:#cd767b;}
+.order-offer a.brief-link:hover,.order-offer a.brief-link:focus-visible{background:#bc3b49;}
