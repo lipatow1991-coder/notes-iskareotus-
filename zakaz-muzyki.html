@@ -174,7 +174,11 @@
     var form=document.getElementById("brief"), result=document.getElementById("result");
     var message=document.getElementById("message"), status=document.getElementById("status");
     var serviceNames={personal:"Песня по личной истории",video:"Музыка для видео или блога",game:"Саундтрек для игры",other:"Другая музыкальная задача"};
-    var selected=new URLSearchParams(window.location.search).get("service");
+    var params=new URLSearchParams(window.location.search);
+    var selected=params.get("service");
+    var sourceNames={tiktok:"TikTok",vk:"ВКонтакте",kufar:"Kufar",bandlink:"BandLink",direct:"Прямая ссылка"};
+    var channel=params.get("utm_source");
+    var source=Object.prototype.hasOwnProperty.call(sourceNames,channel)?sourceNames[channel]:null;
     if(Object.prototype.hasOwnProperty.call(serviceNames,selected)){document.getElementById("service").value=selected;}
     function val(id){return document.getElementById(id).value.trim();}
     function build(){
@@ -182,6 +186,7 @@
         "Здравствуйте! Хочу обсудить музыкальный заказ.",
         "",
         "Формат: "+serviceNames[val("service")],
+        ...(source?["Где узнали о нас: "+source]:[]),
         "Использование: "+val("usage"),
         "Для чего: "+val("purpose"),
         "Жанр/настроение: "+(val("mood")||"Обсудим"),
