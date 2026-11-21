@@ -1,3 +1,20 @@
+let wasBackgroundPlayingBeforeAlbum = false;
+let previouslyFocusedElement = null;
+
+function updateMusicButton() {
+    const musicBtn = document.getElementById("musicBtn");
+    const bgMusic = document.getElementById("bgMusic");
+    if (!musicBtn || !bgMusic) return;
+    const playing = !bgMusic.paused;
+    musicBtn.textContent = playing ? "🔇 Выключить фон" : "🔊 Включить фон";
+    musicBtn.setAttribute("aria-pressed", String(playing));
+}
+
+function showPlayerStatus(message) {
+    const status = document.getElementById("playerStatus");
+    if (status) status.textContent = message;
+}
+
 // --- ФУНКЦИЯ ВХОДА НА САЙТ (ЗАПУСК МУЗЫКИ) ---
 function startExperience() {
     const introScreen = document.getElementById('intro-screen');
@@ -9,13 +26,12 @@ function startExperience() {
 
     if (bgMusic) {
         bgMusic.volume = 0.2;
-        bgMusic.play().catch(e => console.log("Ошибка музыки"));
-        if (musicBtn) musicBtn.innerText = "🔇 Выключить фон";
+        bgMusic.play().then(updateMusicButton).catch(updateMusicButton);
     }
 
     if (clickSound) {
         clickSound.volume = 0.5;
-        clickSound.play();
+        clickSound.play().catch(() => {});
     }
 }
 
@@ -45,14 +61,23 @@ document.addEventListener("DOMContentLoaded", () => {
         musicBtn.addEventListener("click", (e) => {
             e.stopPropagation();
             if (bgMusic.paused) {
-                bgMusic.play();
-                musicBtn.innerText = "🔇 Выключить фон";
+                bgMusic.play().then(updateMusicButton).catch(updateMusicButton);
             } else {
                 bgMusic.pause();
-                musicBtn.innerText = "🔊 Включить фон";
+                updateMusicButton();
             }
         });
     }
+
+    const modalPlayer = document.getElementById("modalPlayer");
+    if (modalPlayer) {
+        modalPlayer.addEventListener("error", () => showPlayerStatus("Не удалось загрузить аудио. Попробуйте другой трек."));
+        modalPlayer.addEventListener("playing", () => showPlayerStatus(""));
+    }
+    document.addEventListener("keydown", e => {
+        const modal = document.getElementById("albumModal");
+        if (e.key === "Escape" && modal && modal.style.display === "flex") closeAlbum();
+    });
 
     // --- 3. АНИМАЦИЯ ПОЯВЛЕНИЯ (SCROLL) ---
     const fadeElements = document.querySelectorAll('.fade-in');
@@ -128,20 +153,29 @@ function openAlbum(albumTitle, folderPath, tracks) {
         shakeBtn.classList.remove('active');
     }
 
+    wasBackgroundPlayingBeforeAlbum = Boolean(bgMusic && !bgMusic.paused);
+    previouslyFocusedElement = document.activeElement;
     if (bgMusic) bgMusic.pause();
+    updateMusicButton();
+    showPlayerStatus("");
 
     trackList.innerHTML = '';
     modalTitle.innerText = albumTitle;
 
     tracks.forEach((track, index) => {
-        const trackItem = document.createElement('div');
+        const trackItem = document.createElement('button');
+        trackItem.type = 'button';
         trackItem.className = 'track-item';
         
-        trackItem.innerHTML = `<span class="track-number">${index + 1}</span> ${track.title}`;
+        const number = document.createElement("span");
+        number.className = "track-number";
+        number.textContent = String(index + 1);
+        trackItem.append(number, document.createTextNode(track.title));
         
         trackItem.onclick = () => {
             player.src = `${folderPath}/${track.file}`;
-            player.play();
+            showPlayerStatus("Загрузка аудио…");
+            player.play().catch(() => showPlayerStatus("Не удалось запустить трек. Нажмите ▶ на плеере или выберите другой."));
             
             document.querySelectorAll('.track-item').forEach(el => el.classList.remove('active'));
             trackItem.classList.add('active');
@@ -151,6 +185,9 @@ function openAlbum(albumTitle, folderPath, tracks) {
     });
 
     modal.style.display = "flex";
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    document.querySelector(".close-btn")?.focus();
 }
 
 // --- 7. ФУНКЦИЯ ЗАКРЫТИЯ ПЛЕЕРА ---
@@ -162,8 +199,21 @@ function closeAlbum() {
     const modalContent = document.querySelector('.modal-content');
     if (modalContent) modalContent.classList.remove('shake-active');
     
-    if (player) player.pause();
-    if (modal) modal.style.display = "none";
+    if (player) {
+        player.pause();
+        player.removeAttribute("src");
+        player.load();
+    }
+    if (modal) {
+        modal.style.display = "none";
+        modal.setAttribute("aria-hidden", "true");
+    }
+    document.body.classList.remove("modal-open");
+    showPlayerStatus("");
+    const bgMusic = document.getElementById("bgMusic");
+    if (wasBackgroundPlayingBeforeAlbum && bgMusic) bgMusic.play().then(updateMusicButton).catch(updateMusicButton);
+    wasBackgroundPlayingBeforeAlbum = false;
+    previouslyFocusedElement?.focus();
 }
 
 window.onclick = function(event) {
