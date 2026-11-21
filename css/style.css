@@ -710,3 +710,7 @@ a:focus-visible, button:focus-visible, #intro-screen:focus-visible {
 .order-offer a + a{margin-top:9px;}
 .order-offer a.brief-link{background:#983039;border-color:#cd767b;}
 .order-offer a.brief-link:hover,.order-offer a.brief-link:focus-visible{background:#bc3b49;}
+
+/* FOUR_OFFER_GRID: B2B Suno and consumer services */
+@media (min-width:931px){.order-offers{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1080px;}}
+footer a[href="sitemap.xml"]{color:#d9bb89;text-underline-offset:3px;}
