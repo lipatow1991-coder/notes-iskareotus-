@@ -20,7 +20,7 @@ NOTES ISKAREOTUS создаёт музыку с использованием **S
 
 - [Музыка для игр и визуальных новелл](https://lipatow1991-coder.github.io/notes-iskareotus-/music-for-games.html) — прослушиваемые примеры из опубликованных альбомов.
 - [Песни для праздников и свадеб](https://lipatow1991-coder.github.io/notes-iskareotus-/music-for-events.html) — новые примеры детской праздничной и свадебной музыки.
-- [Коммерческое портфолио](https://lipatow1991-coder.github.io/notes-iskareotus-/commercial-demos.html) — шесть направлений: история, сражение, хоррор, детский праздник, свадьба и именное поздравление (четыре записи можно послушать онлайн, две праздничные демозаписи пока доступны по запросу).
+- [Коммерческое портфолио](https://lipatow1991-coder.github.io/notes-iskareotus-/commercial-demos.html) — шесть направлений: история, сражение, хоррор, детский праздник, свадьба и именное поздравление (все шесть представленных работ доступны для прослушивания онлайн).
 - [Suno AI Music Creator](https://lipatow1991-coder.github.io/notes-iskareotus-/suno-portfolio.html) — музыкальный промпт-инжиниринг и создание AI-музыки.
 - [Составить заявку на музыку](https://lipatow1991-coder.github.io/notes-iskareotus-/zakaz-muzyki.html).
 
