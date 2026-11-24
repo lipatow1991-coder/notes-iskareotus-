@@ -714,3 +714,13 @@ a:focus-visible, button:focus-visible, #intro-screen:focus-visible {
 /* FOUR_OFFER_GRID: B2B Suno and consumer services */
 @media (min-width:931px){.order-offers{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1080px;}}
 footer a[href="sitemap.xml"]{color:#d9bb89;text-underline-offset:3px;}
+
+/* Organic listener journey: TikTok -> album -> streaming platforms */
+.hero-discovery { max-width:680px; margin:10px auto 0; padding:0 14px; text-align:center; color:#f2d9c0; font-size:1rem; letter-spacing:.03em; text-shadow:0 2px 8px #000; }
+.album-actions { display:flex; flex-direction:column; flex-wrap:nowrap; justify-content:flex-start; align-items:stretch; gap:10px; }
+.album-actions > .music-platform-link { display:block; width:100%; box-sizing:border-box; text-align:center; padding:10px 12px; font-size:.95rem; line-height:1.3; border-radius:8px; }
+.album-actions > .stream-primary { color:#fff2e1; background:linear-gradient(145deg,#8a2422,#361115); border:1px solid #b76141; font-weight:800; box-shadow:0 4px 14px #0008; }
+.album-actions > .stream-primary:hover,.album-actions > .stream-primary:focus-visible { background:linear-gradient(145deg,#b0322d,#551418); color:#fff; border-color:#f2c47a; }
+.album-actions > .album-play-button { color:#dfd1c4; border:1px solid #66534b; background:#1c1414; cursor:pointer; }
+.album-actions > .album-play-button:hover { color:#fff; border-color:#a77556; }
+@media (max-width:600px){ .hero-discovery{font-size:.9rem;} .album-actions > .music-platform-link{font-size:1rem;} }
